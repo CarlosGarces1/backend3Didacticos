@@ -1,9 +1,11 @@
 <?php
 
+use App\Livewire\PostsComponent;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware([
@@ -12,6 +14,10 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('admin');
     })->name('dashboard');
+    Route::get('/posts', PostsComponent::class)->name('posts');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
 });

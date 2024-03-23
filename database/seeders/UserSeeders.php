@@ -21,7 +21,7 @@ class UserSeeders extends Seeder
                 'last_name' => 'Admin',
                 'date_birth' => '2001-04-01',
                 'age' => '22',
-                'username' => 'Admin',
+                'username' => 'Admin123',
                 'email' => 'felipegarces@gmail.com',
                 'password' => Hash::make('123456789'),
             ],
@@ -29,7 +29,7 @@ class UserSeeders extends Seeder
                 'first_name' => 'Cliente',
                 'last_name' => 'Cliente',
                 'date_birth' => '2001-04-01',
-                'username' => 'Cliente',
+                'username' => 'Cliente123',
                 'age' => '22',
 
                 'email' => 'customer@gmail.com',

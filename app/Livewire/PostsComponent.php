@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class PostsComponent extends Component
 {
@@ -28,16 +29,19 @@ class PostsComponent extends Component
     {
         $this->modal = true;
     }
+
     public function cerrarModal()
     {
         $this->modal = false;
     }
+
     public function limpiarCampos()
     {
         $this->description = '';
         $this->name = '';
         $this->id_posts = '';
     }
+
     public function editar($id)
     {
         $id_posts = Post::findOrFail($id);
@@ -46,13 +50,21 @@ class PostsComponent extends Component
         $this->description = $id_posts->description;
         $this->modal = true;
     }
+
     public function borrar($id)
     {
         Post::find($id)->delete();
         session()->flash('message', 'Registro eliminado correctamente');
     }
+
     public function guardar()
     {
+        $this->validate([
+            'name' => 'required',
+            'description' => 'required|max:250',
+        ]);
+
+
         $userId = Auth::id();
         $data = [
             'name' => $this->name,

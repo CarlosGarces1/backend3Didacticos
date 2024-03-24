@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -38,7 +38,7 @@ class UserController extends Controller
         $users->age = $request->age;
         $users->username = $request->username;
         $users->email = $request->email;
-
+        $users->password=Hash::make('123456789');
         $users->save();
     }
 

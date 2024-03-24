@@ -26,13 +26,33 @@ class UserSeeders extends Seeder
                 'password' => Hash::make('123456789'),
             ],
             [
-                'first_name' => 'Cliente',
+                'first_name' => 'Cliente1',
                 'last_name' => 'Cliente',
                 'date_birth' => '2001-04-01',
                 'username' => 'Cliente123',
                 'age' => '22',
 
                 'email' => 'customer@gmail.com',
+                'password' => Hash::make('123456789'),
+            ],
+            [
+                'first_name' => 'Cliente2',
+                'last_name' => 'Cliente',
+                'date_birth' => '2001-04-01',
+                'username' => 'Cliente1234',
+                'age' => '22',
+
+                'email' => 'customer1@gmail.com',
+                'password' => Hash::make('123456789'),
+            ],
+            [
+                'first_name' => 'Cliente3',
+                'last_name' => 'Cliente',
+                'date_birth' => '2001-04-01',
+                'username' => 'Cliente1235',
+                'age' => '22',
+
+                'email' => 'customer3@gmail.com',
                 'password' => Hash::make('123456789'),
             ],
         ]);
